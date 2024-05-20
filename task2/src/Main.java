@@ -17,28 +17,30 @@ public class Main {
         double average = 0;
         double smallest = 0;
 
-        if(first > second && first > third) {
+        if (first > second && first > third) {
             greatest = first;
-        }
-        if(second > third && second > first) {
-            greatest = second;
-        }
-        if(third > first && third > second) {
-            greatest = third;
-        }
-
-        average = (first + second + third) / 3;
-
-
-        if(first < second && first < third) {
+        } else if (first < second && first < third) {
             smallest = first;
+        } else {
+            average = first;
         }
-        if(second < third && second < first) {
-            smallest = second;
-        }
-        if(third < first && third < second) {
+
+        if (third > second && third > first) {
+            greatest = third;
+        } else if (third < second && first < third) {
             smallest = third;
+        } else {
+            average = third;
         }
+
+        if (second > third && second > first) {
+            greatest = second;
+        } else if (second < first && second < third) {
+            smallest = second;
+        } else {
+            average = second;
+        }
+
         System.out.println("Наибольший вес: " + greatest);
         System.out.println("Средний вес: " + average);
         System.out.println("Наименьший вес: " + smallest);
